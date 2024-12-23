@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <title>KAME-HOUSE</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>KAME - HOUSE</h1>
+        <h2>FIGURAS</h2>
+        <p>Las mejores figuras para tu colección</p>
+    </header>
+
+    <nav>
+        <a href="index.html"><button>Inicio</button></a>
+        <a href="productos.html"><button>Productos</button></a>
+        <a href="pedidos.html"><button>Pedidos</button></a>
+        <a href="contacto.html"><button>Contacto</button></a>
+        
+    </nav>
+
+    <main class="main">
+        <h3>LO ÚLTIMO...</h3>
+        <div id="productos">
+            <section class="productos">
+
+                <div class="producto">
+                    <img src="./img/power.jpg" alt="power">
+                    <h3>Power</h3>
+                    <h4>$1000</h4>
+                    <br>
+                    <span>Stock: <span id="stock-power">10</span></span>
+                    <br>
+                    <br>
+                    <button onclick="agregarAlCarrito('Power', 800, 'power')">Agregar</button>
+                </div>
+                <div class="producto">
+                    <img src="./img/makima.jpg" alt="makima">
+                    <h3>Makima</h3>
+                    <h4>$1000</h4>
+                    <br>
+                    <span>Stock: <span id="stock-makima">10</span></span>
+                    <br>
+                    <br>
+                    <button onclick="agregarAlCarrito('Makima', 800, 'makima')">Agregar</button>
+                </div>
+                <div class="producto">
+                    <img src="./img/2b.jpg" alt="2b">
+                    <h3>2B</h3>
+                    <h4>$1000</h4>
+                    <br>
+                    <span>Stock: <span id="stock-twob">10</span></span>
+                    <br>
+                    <br>
+                    <button onclick="agregarAlCarrito('2B', 800, 'twob')">Agregar</button>
+                </div>
+                <div class="producto">
+                    <img src="./img/goku.jpeg" alt="goku">
+                    <h3>Goku</h3>
+                    <h4>$1000</h4>
+                    <br>
+                    <span>Stock: <span id="stock-goku">10</span></span>
+                    <br>
+                    <br>
+                    <button onclick="agregarAlCarrito('Goku', 800, 'goku')">Agregar</button>
+                </div>
+                <div class="producto">
+                    <img src="./img/bulma.jpeg" alt="bulma">
+                    <h3>Bulma</h3>
+                    <h4>$1000</h4>
+                    <br>
+                    <span>Stock: <span id="stock-bulma">10</span></span>
+                    <br>
+                    <br>
+                    <button onclick="agregarAlCarrito('Bulma', 800, 'bulma')">Agregar</button>
+                </div>
+                <div class="producto">
+                    <img src="./img/mikasa.jpg" alt="mikasa">
+                    <h3>Mikasa</h3>
+                    <h4>$1000</h4>
+                    <br>
+                    <span>Stock: <span id="stock-mikasa">10</span></span>
+                    <br>
+                    <br>
+                    <button onclick="agregarAlCarrito('Mikasa', 800, 'mikasa')">Agregar</button>
+                </div>
+                <div class="producto">
+                    <img src="./img/yoru.jpg" alt="yoru">
+                    <h3>Yoru</h3>
+                    <h4>$1000</h4>
+                    <br>
+                    <span>Stock: <span id="stock-yoru">10</span></span>
+                    <br>
+                    <br>
+                    <button onclick="agregarAlCarrito('Yoru', 800, 'yoru')">Agregar</button>
+                </div>
+                <div class="producto">
+                    <img src="./img/roshi.jpg" alt="roshi">
+                    <h3>Roshi</h3>
+                    <h4>$1000</h4>
+                    <br>
+                    <span>Stock: <span id="stock-roshi">10</span></span>
+                    <br>
+                    <br>
+                    <button onclick="agregarAlCarrito('Roshi', 800, 'roshi')">Agregar</button>
+                </div>
+        </div>
+        </section>
+    </main>
+
+    <hr>
+
+    <div id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Subtotal: $<span id="subtotal-carrito">0</span></p>
+        <p>Descuento: $<span id="descuento-carrito">0</span></p>
+        <p>IVA (21%): $<span id="iva-carrito">0</span></p>
+        <p><strong>Total: $<span id="total-carrito">0</span></strong></p>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <button onclick="mostrarCheckout()">Checkout</button>
+    </div>
+    
+
+    <div id="checkout-modal">
+        <div class="checkout-content">
+            <h2>Finalizar Compra</h2>
+            <p>Subtotal: $<span id="modal-subtotal">0</span></p>
+            <p>Descuento: $<span id="modal-descuento">0</span></p>
+            <p>IVA: $<span id="modal-iva">0</span></p>
+            <p><strong>Total a Pagar: $<span id="modal-total">0</span></strong></p>
+            <button onclick="realizarCompra()">Confirmar Compra</button>
+            <button onclick="cerrarCheckout()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="funciones.js"></script>    
+  
+    <hr>
+
+    <footer>
+        <span>En KAME-HOUSE, somos apasionados del anime y la cultura japonesa, y queremos compartir esa pasión contigo.
+            Nacimos como un pequeño grupo de fans dedicados a coleccionar figuras y productos exclusivos de nuestras
+            series favoritas, y con el tiempo, convertimos ese amor en un espacio dedicado a todos los otakus y
+            coleccionistas.
+
+            Nos especializamos en ofrecer figuras de alta calidad, desde ediciones limitadas hasta clásicos atemporales,
+            cuidando cada detalle para que recibas piezas auténticas que reflejen la esencia de tus personajes
+            favoritos.
+
+            Nuestro objetivo es ser más que una tienda; queremos ser tu lugar de confianza para encontrar esas figuras
+            que te emocionan y conectan con tu mundo anime. Nos esforzamos por brindarte una experiencia única, desde la
+            selección de productos hasta la atención personalizada que mereces.
+
+            Únete a nuestra comunidad y deja que juntos celebremos lo mejor del anime, una figura a la vez. ¡Gracias por
+            confiar en nosotros para llevar tu colección al siguiente nivel!</span>
+            <br>
+            <br>
+        <i class="fi fi-brands-instagram"></i>
+        <i class="fi fi-brands-facebook"></i>
+        <i class="fi fi-brands-whatsapp"></i>
+        <i class="fi fi-brands-twitter"></i>
+        <i class="fi fi-brands-youtube"></i>
+        <p>© 2024 KAME - HOUSE. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
